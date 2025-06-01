@@ -1,0 +1,82 @@
+# PhonePe Pulse Data Visualization
+
+## Overview
+This dashboard offers insights into PhonePe's transaction data, highlighting trends and patterns across various parameters. It's built using Python and visualizes the data through a Streamlit-based interactive dashboard.
+
+## Components
+
+- `Phonepe_Data_Exploration.ipynb`: Script to process JSON data, Analyzed, cleaning, mapping, loading into structured CSVs and finaly insert them into a MySQL database.
+- `Phonepe_Visual_App.py' cation for visualizing the data.
+
+## Getting Started
+
+### Library used for Phonepe Projects 
+- import pandas as pd            # For data manipulation and analysis using DataFrames.
+- import numpy as np             # For numerical operations and handling arrays.
+- import os                      # For interacting with the operating system (e.g., file paths).
+- import json                    # For parsing and handling JSON data.
+- import mysql.connector as sql  # For connecting to and querying a MySQL database.
+- import geopandas as gpd        # For working with geospatial data (maps, shapes, etc.).
+- from fuzzywuzzy import fuzz, process  # For fuzzy string matching and similarity scoring.
+- import requests, zipfile, io   # For making HTTP requests, handling ZIP files, and in-memory streams.
+- import plotly.express as px              # For creating interactive visualizations and charts.
+- import streamlit as st                   # For building and displaying interactive web apps in Python.
+- from streamlit_option_menu import option_menu  # For creating sidebar or navbar-style option menus in Streamlit.
+- import io                                # For handling in-memory file operations (e.g., reading/writing buffers).
+- import requests                          # For sending HTTP requests to access web APIs or download content.
+
+### Setting up the SQL Database and connector
+1.Mydb = sql.connect(host = "localhost",
+                   user = "User Name",
+                   password = "Password",
+                   database = "Data Base name")
+mycursor = Mydb.cursor(buffered=True)
+cursor = Mydb.cursor()
+    ```
+
+### Running the Data Extraction Script
+
+#url = "https://github.com/PhonePe/pulse/archive/refs/heads/master.zip"
+#extract_path = "D:/DSprojects/Phonepe/pulse_data"
+
+#r = requests.get(url)
+#z = zipfile.ZipFile(io.BytesIO(r.content))
+#z.extractall(extract_path)
+
+### Launching the Phonepe_Visual_App through anaconda prompt
+Run the streamlit Phonepe_Visual_App:
+```
+cd /d D:\DSprojects\Phonepe
+	streamlit run Phonepe_Visual_App.py
+My files are in D drive therefore have to give a path```
+
+## Features
+
+- Data Extraction: Automates processing of raw JSON data into structured formats.
+- Interactive Dashboard: Dynamic visualization with filters for different data perspectives.
+- Geographical Insights: Transaction data visualization on a choropleth map of India.
+- User Growth Analysis: Displays user growth trends over time.
+
+## File Descriptions
+
+- `Phonepe_Data_Exploration.ipynb`: Processes raw PhonePe data.
+- `Phonepe_Visual_App.py`: Streamlit app for data visualization.
+
+## Further Development
+
+- UI Enhancement: Improve the user interface for better user experience.
+- Expanded Data Utilization: Map sate & district to match our JSON file to render India Map for .batter user experience.
+- Enhanced Visualizations: Develop more sophisticated visualizations for the top data insights page.
+- State & District-Level Detail: Incorporate more granular, state & district-level details in the geographical insights map.
+
+## Acknowledgements
+
+- PhonePe for providing the dataset
+- Streamlit for the interactive web app framework.
+- Plotly for data visualization tools.
+- Git Bash for loading data from local drive to my github repository 
+- More detail about libraries already explained above
+
+## Authors
+
+- Pavan Kumar
